@@ -5172,6 +5172,8 @@ namespace ScintillaNET
                     fixed (byte* bp = Helpers.GetBytes(value, Encoding, zeroTerminated: true))
                         DirectMessage(NativeMethods.SCI_SETTEXT, IntPtr.Zero, new IntPtr(bp));
                 }
+
+                Lines.RebuildLineData();
             }
         }
 
