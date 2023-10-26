@@ -2724,7 +2724,8 @@ namespace ScintillaNET
                         break;
 
                     case NativeMethods.SCN_STYLENEEDED:
-                        OnStyleNeeded(new StyleNeededEventArgs(this, scn.position));
+						Lines.RebuildLineData();
+						OnStyleNeeded(new StyleNeededEventArgs(this, scn.position));
                         break;
 
                     case NativeMethods.SCN_SAVEPOINTLEFT:
